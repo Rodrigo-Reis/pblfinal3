@@ -1,0 +1,661 @@
+|principal
+chmoeda[0] => chmoeda[0].IN1
+chmoeda[1] => chmoeda[1].IN1
+chbebida[0] => chbebida[0].IN2
+chbebida[1] => chbebida[1].IN2
+chsensor[0] => chsensor[0].IN2
+chsensor[1] => chsensor[1].IN2
+chsensor[2] => chsensor[2].IN2
+btn1 => _.IN1
+btn2 => _.IN1
+clock => clock.IN1
+segmentos[0] << mostrardisplay:comb_11.port7
+segmentos[1] << mostrardisplay:comb_11.port7
+segmentos[2] << mostrardisplay:comb_11.port7
+segmentos[3] << mostrardisplay:comb_11.port7
+segmentos[4] << mostrardisplay:comb_11.port7
+segmentos[5] << mostrardisplay:comb_11.port7
+segmentos[6] << mostrardisplay:comb_11.port7
+digito[0] << mostrardisplay:comb_11.port8
+digito[1] << mostrardisplay:comb_11.port8
+digito[2] << mostrardisplay:comb_11.port8
+digito[3] << mostrardisplay:comb_11.port8
+ponto << <VCC>
+rgb_green << MaquinadeEstados:comb_5.port19
+rgb_blue << MaquinadeEstados:comb_5.port20
+rgb_red << MaquinadeEstados:comb_5.port21
+
+
+|principal|tempo2seg:entrega
+clock => bit[0].CLK
+clock => bit[1].CLK
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|tempo2seg:pressu
+clock => bit[0].CLK
+clock => bit[1].CLK
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|tempo6seg:errosensor
+clock => bit[0].CLK
+clock => bit[1].CLK
+clock => bit[2].CLK
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|tempo6seg:erromoeda
+clock => bit[0].CLK
+clock => bit[1].CLK
+clock => bit[2].CLK
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|tempo10seg:bebiba
+clock => bit[0].CLK
+clock => bit[1].CLK
+clock => bit[2].CLK
+clock => bit[3].CLK
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|tempo10seg:moeda
+clock => bit[0].CLK
+clock => bit[1].CLK
+clock => bit[2].CLK
+clock => bit[3].CLK
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|tempo10seg:aquecimento
+clock => bit[0].CLK
+clock => bit[1].CLK
+clock => bit[2].CLK
+clock => bit[3].CLK
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+on_off => bit.OUTPUTSELECT
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|MaquinadeEstados:comb_5
+B0 => always0.IN0
+B0 => always0.IN0
+B0 => always0.IN0
+B0 => Selector1.IN7
+B0 => Selector0.IN0
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => estados.OUTPUTSELECT
+ErrSensor => always0.IN1
+ErrSensor => always0.IN1
+ErrMoeda => always0.IN1
+ErrMoeda => always0.IN1
+T10_bebida => estados.OUTPUTSELECT
+T10_bebida => estados.OUTPUTSELECT
+T10_bebida => estados.OUTPUTSELECT
+T10_bebida => estados.OUTPUTSELECT
+T10_bebida => estados.OUTPUTSELECT
+T10_bebida => estados.OUTPUTSELECT
+T10_bebida => estados.OUTPUTSELECT
+T10_bebida => estados.OUTPUTSELECT
+T10_bebida => always0.IN1
+T10_moeda => estados.OUTPUTSELECT
+T10_moeda => estados.OUTPUTSELECT
+T10_moeda => estados.OUTPUTSELECT
+T10_moeda => estados.OUTPUTSELECT
+T10_moeda => estados.OUTPUTSELECT
+T10_moeda => estados.OUTPUTSELECT
+T10_moeda => estados.OUTPUTSELECT
+T10_moeda => estados.OUTPUTSELECT
+T10_moeda => always0.IN1
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T2_pressu => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T10_aqueci => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T2_entre => estados.OUTPUTSELECT
+T6_errMoeda => Selector0.IN7
+T6_errMoeda => Selector7.IN7
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+T6_sensor => estados.OUTPUTSELECT
+clock => estados~2.DATAIN
+ATUAL[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+ATUAL[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+ATUAL[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+sec10_bebida <= sec10_bebida.DB_MAX_OUTPUT_PORT_TYPE
+sec10_moeda <= on_off.DB_MAX_OUTPUT_PORT_TYPE
+sec2_pressu <= rgb_blue.DB_MAX_OUTPUT_PORT_TYPE
+sec10_aqueci <= rgb_red.DB_MAX_OUTPUT_PORT_TYPE
+sec2_entre <= rgb_green.DB_MAX_OUTPUT_PORT_TYPE
+sec6_errMoeda <= sec6_errMoeda.DB_MAX_OUTPUT_PORT_TYPE
+sec6_sensor <= sec6_sensor.DB_MAX_OUTPUT_PORT_TYPE
+rgb_green <= rgb_green.DB_MAX_OUTPUT_PORT_TYPE
+rgb_blue <= rgb_blue.DB_MAX_OUTPUT_PORT_TYPE
+rgb_red <= rgb_red.DB_MAX_OUTPUT_PORT_TYPE
+on_off <= on_off.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|level_to_pulse:enter
+level => level.IN1
+pulse <= comb.DB_MAX_OUTPUT_PORT_TYPE
+clock => clock.IN2
+
+
+|principal|level_to_pulse:enter|FFD:comb_6
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|level_to_pulse:enter|FFD:comb_7
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|level_to_pulse:inserir
+level => level.IN1
+pulse <= comb.DB_MAX_OUTPUT_PORT_TYPE
+clock => clock.IN2
+
+
+|principal|level_to_pulse:inserir|FFD:comb_6
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|level_to_pulse:inserir|FFD:comb_7
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|ErrSensor:comb_8
+chaves[0] => ERR1.IN0
+chaves[1] => ERR1.IN1
+chaves[2] => ERR1.IN1
+ERR1 <= ERR1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|SomadorMoeda:comb_9
+chmoeda[0] => Equal0.IN1
+chmoeda[0] => Equal1.IN0
+chmoeda[0] => Equal2.IN1
+chmoeda[0] => Equal3.IN1
+chmoeda[1] => Equal0.IN0
+chmoeda[1] => Equal1.IN1
+chmoeda[1] => Equal2.IN0
+chmoeda[1] => Equal3.IN0
+botao => always0.IN1
+botao => always0.IN1
+botao => always0.IN1
+botao => always0.IN1
+soma[0] <= soma[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+soma[1] <= soma[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+soma[2] <= soma[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+soma[3] <= soma[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+soma[4] <= soma[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock => soma[0]~reg0.CLK
+clock => soma[1]~reg0.CLK
+clock => soma[2]~reg0.CLK
+clock => soma[3]~reg0.CLK
+clock => soma[4]~reg0.CLK
+clock => Cedula_inv~reg0.CLK
+clock => valorultrapassou~reg0.CLK
+Cedula_inv <= Cedula_inv~reg0.DB_MAX_OUTPUT_PORT_TYPE
+valorultrapassou <= valorultrapassou~reg0.DB_MAX_OUTPUT_PORT_TYPE
+on_off => soma.OUTPUTSELECT
+on_off => soma.OUTPUTSELECT
+on_off => soma.OUTPUTSELECT
+on_off => soma.OUTPUTSELECT
+on_off => soma.OUTPUTSELECT
+on_off => Cedula_inv~reg0.ENA
+on_off => valorultrapassou~reg0.ENA
+
+
+|principal|ErrMoeda:comb_10
+bebida[0] => Equal1.IN1
+bebida[0] => Equal3.IN0
+bebida[0] => Equal5.IN1
+bebida[0] => Equal7.IN1
+bebida[1] => Equal1.IN0
+bebida[1] => Equal3.IN1
+bebida[1] => Equal5.IN0
+bebida[1] => Equal7.IN0
+moedaINV <= moedaINV~reg0.DB_MAX_OUTPUT_PORT_TYPE
+moedaNCORRESPONDE <= moedaNCORRESPONDE~reg0.DB_MAX_OUTPUT_PORT_TYPE
+soma[0] => Equal2.IN9
+soma[0] => Equal4.IN9
+soma[0] => Equal6.IN9
+soma[0] => Equal8.IN9
+soma[0] => Equal0.IN4
+soma[1] => Equal2.IN8
+soma[1] => Equal4.IN8
+soma[1] => Equal6.IN8
+soma[1] => Equal8.IN8
+soma[1] => Equal0.IN3
+soma[2] => Equal2.IN7
+soma[2] => Equal4.IN7
+soma[2] => Equal6.IN7
+soma[2] => Equal8.IN7
+soma[2] => Equal0.IN2
+soma[3] => Equal2.IN6
+soma[3] => Equal4.IN6
+soma[3] => Equal6.IN6
+soma[3] => Equal8.IN6
+soma[3] => Equal0.IN1
+soma[4] => Equal2.IN5
+soma[4] => Equal4.IN5
+soma[4] => Equal6.IN5
+soma[4] => Equal8.IN5
+soma[4] => Equal0.IN0
+clock => moedaNCORRESPONDE~reg0.CLK
+clock => moedaINV~reg0.CLK
+
+
+|principal|mostrardisplay:comb_11
+clk => clk.IN1
+select[0] => select[0].IN1
+select[1] => select[1].IN1
+select[2] => select[2].IN1
+sensores[0] => sensores[0].IN1
+sensores[1] => sensores[1].IN1
+sensores[2] => sensores[2].IN1
+soma[0] => soma[0].IN1
+soma[1] => soma[1].IN1
+soma[2] => soma[2].IN1
+soma[3] => soma[3].IN1
+soma[4] => soma[4].IN1
+bebida[0] => bebida[0].IN1
+bebida[1] => bebida[1].IN1
+cedulaINV => cedulaINV.IN1
+valoramais => valoramais.IN1
+segment[0] <= mux28x7:comb_5.port2
+segment[1] <= mux28x7:comb_5.port2
+segment[2] <= mux28x7:comb_5.port2
+segment[3] <= mux28x7:comb_5.port2
+segment[4] <= mux28x7:comb_5.port2
+segment[5] <= mux28x7:comb_5.port2
+segment[6] <= mux28x7:comb_5.port2
+digit[0] <= DEMUX4X1:comb_6.port2
+digit[1] <= DEMUX4X1:comb_6.port2
+digit[2] <= DEMUX4X1:comb_6.port2
+digit[3] <= DEMUX4X1:comb_6.port2
+
+
+|principal|mostrardisplay:comb_11|contadora:comb_3
+clk => output_cont[0]~reg0.CLK
+clk => output_cont[1]~reg0.CLK
+clk => output_cont[2]~reg0.CLK
+output_cont[0] <= output_cont[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_cont[1] <= output_cont[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output_cont[2] <= output_cont[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|mostrardisplay:comb_11|decodificador28bits:comb_4
+sel[0] => Mux0.IN10
+sel[0] => Decoder0.IN2
+sel[0] => Mux1.IN10
+sel[0] => Mux2.IN10
+sel[0] => Mux3.IN10
+sel[0] => Mux4.IN10
+sel[0] => Mux5.IN10
+sel[0] => Mux6.IN10
+sel[0] => Mux7.IN10
+sel[0] => Mux8.IN10
+sel[0] => Mux9.IN10
+sel[0] => Mux10.IN10
+sel[0] => Mux11.IN10
+sel[0] => Mux12.IN10
+sel[0] => Mux13.IN10
+sel[0] => Mux14.IN10
+sel[0] => Mux15.IN10
+sel[0] => Mux16.IN10
+sel[0] => Mux17.IN10
+sel[0] => Mux18.IN10
+sel[1] => Mux0.IN9
+sel[1] => Decoder0.IN1
+sel[1] => Mux1.IN9
+sel[1] => Mux2.IN9
+sel[1] => Mux3.IN9
+sel[1] => Mux4.IN9
+sel[1] => Mux5.IN9
+sel[1] => Mux6.IN9
+sel[1] => Mux7.IN9
+sel[1] => Mux8.IN9
+sel[1] => Mux9.IN9
+sel[1] => Mux10.IN9
+sel[1] => Mux11.IN9
+sel[1] => Mux12.IN9
+sel[1] => Mux13.IN9
+sel[1] => Mux14.IN9
+sel[1] => Mux15.IN9
+sel[1] => Mux16.IN9
+sel[1] => Mux17.IN9
+sel[1] => Mux18.IN9
+sel[2] => Mux0.IN8
+sel[2] => Decoder0.IN0
+sel[2] => Mux1.IN8
+sel[2] => Mux2.IN8
+sel[2] => Mux3.IN8
+sel[2] => Mux4.IN8
+sel[2] => Mux5.IN8
+sel[2] => Mux6.IN8
+sel[2] => Mux7.IN8
+sel[2] => Mux8.IN8
+sel[2] => Mux9.IN8
+sel[2] => Mux10.IN8
+sel[2] => Mux11.IN8
+sel[2] => Mux12.IN8
+sel[2] => Mux13.IN8
+sel[2] => Mux14.IN8
+sel[2] => Mux15.IN8
+sel[2] => Mux16.IN8
+sel[2] => Mux17.IN8
+sel[2] => Mux18.IN8
+s1[0] <= Mux18.DB_MAX_OUTPUT_PORT_TYPE
+s1[1] <= Mux17.DB_MAX_OUTPUT_PORT_TYPE
+s1[2] <= Mux16.DB_MAX_OUTPUT_PORT_TYPE
+s1[3] <= Mux15.DB_MAX_OUTPUT_PORT_TYPE
+s1[4] <= Mux14.DB_MAX_OUTPUT_PORT_TYPE
+s1[5] <= Mux13.DB_MAX_OUTPUT_PORT_TYPE
+s1[6] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
+s1[7] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+s1[8] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+s1[9] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+s1[10] <= s1.DB_MAX_OUTPUT_PORT_TYPE
+s1[11] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+s1[12] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+s1[13] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+s1[14] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+s1[15] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+s1[16] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+s1[17] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+s1[18] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+s1[19] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+s1[20] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+bebida[0] => Equal0.IN1
+bebida[0] => Equal1.IN0
+bebida[0] => Equal2.IN1
+bebida[1] => Equal0.IN0
+bebida[1] => Equal1.IN1
+bebida[1] => Equal2.IN0
+soma[0] => Equal10.IN4
+soma[0] => Equal11.IN4
+soma[0] => Equal12.IN4
+soma[0] => Equal13.IN1
+soma[0] => Equal14.IN4
+soma[0] => Equal15.IN2
+soma[0] => Equal16.IN4
+soma[0] => Equal17.IN1
+soma[0] => Equal18.IN4
+soma[1] => Equal10.IN3
+soma[1] => Equal11.IN0
+soma[1] => Equal12.IN3
+soma[1] => Equal13.IN4
+soma[1] => Equal14.IN1
+soma[1] => Equal15.IN1
+soma[1] => Equal16.IN3
+soma[1] => Equal17.IN4
+soma[1] => Equal18.IN1
+soma[2] => Equal10.IN2
+soma[2] => Equal11.IN3
+soma[2] => Equal12.IN0
+soma[2] => Equal13.IN0
+soma[2] => Equal14.IN0
+soma[2] => Equal15.IN0
+soma[2] => Equal16.IN2
+soma[2] => Equal17.IN3
+soma[2] => Equal18.IN3
+soma[3] => Equal10.IN1
+soma[3] => Equal11.IN2
+soma[3] => Equal12.IN2
+soma[3] => Equal13.IN3
+soma[3] => Equal14.IN3
+soma[3] => Equal15.IN4
+soma[3] => Equal16.IN0
+soma[3] => Equal17.IN0
+soma[3] => Equal18.IN0
+soma[4] => Equal10.IN0
+soma[4] => Equal11.IN1
+soma[4] => Equal12.IN1
+soma[4] => Equal13.IN2
+soma[4] => Equal14.IN2
+soma[4] => Equal15.IN3
+soma[4] => Equal16.IN1
+soma[4] => Equal17.IN2
+soma[4] => Equal18.IN2
+sensor[0] => Equal3.IN2
+sensor[0] => Equal4.IN0
+sensor[0] => Equal5.IN2
+sensor[0] => Equal6.IN2
+sensor[0] => Equal7.IN1
+sensor[0] => Equal8.IN1
+sensor[0] => Equal9.IN2
+sensor[1] => Equal3.IN1
+sensor[1] => Equal4.IN2
+sensor[1] => Equal5.IN0
+sensor[1] => Equal6.IN1
+sensor[1] => Equal7.IN0
+sensor[1] => Equal8.IN2
+sensor[1] => Equal9.IN1
+sensor[2] => Equal3.IN0
+sensor[2] => Equal4.IN1
+sensor[2] => Equal5.IN1
+sensor[2] => Equal6.IN0
+sensor[2] => Equal7.IN2
+sensor[2] => Equal8.IN0
+sensor[2] => Equal9.IN0
+cedulaINV => ~NO_FANOUT~
+valoramais => s1.DATAA
+valoramais => s1.DATAA
+valoramais => s1.DATAA
+valoramais => s1.DATAA
+
+
+|principal|mostrardisplay:comb_11|mux28x7:comb_5
+data[0] => Mux6.IN3
+data[1] => Mux5.IN3
+data[2] => Mux4.IN3
+data[3] => Mux3.IN3
+data[4] => Mux2.IN3
+data[5] => Mux1.IN3
+data[6] => Mux0.IN3
+data[7] => Mux6.IN2
+data[8] => Mux5.IN2
+data[9] => Mux4.IN2
+data[10] => Mux3.IN2
+data[11] => Mux2.IN2
+data[12] => Mux1.IN2
+data[13] => Mux0.IN2
+data[14] => Mux6.IN1
+data[15] => Mux5.IN1
+data[16] => Mux4.IN1
+data[17] => Mux3.IN1
+data[18] => Mux2.IN1
+data[19] => Mux1.IN1
+data[20] => Mux0.IN1
+data[21] => Mux6.IN0
+data[22] => Mux5.IN0
+data[23] => Mux4.IN0
+data[24] => Mux3.IN0
+data[25] => Mux2.IN0
+data[26] => Mux1.IN0
+data[27] => Mux0.IN0
+select[0] => Mux0.IN5
+select[0] => Mux1.IN5
+select[0] => Mux2.IN5
+select[0] => Mux3.IN5
+select[0] => Mux4.IN5
+select[0] => Mux5.IN5
+select[0] => Mux6.IN5
+select[1] => Mux0.IN4
+select[1] => Mux1.IN4
+select[1] => Mux2.IN4
+select[1] => Mux3.IN4
+select[1] => Mux4.IN4
+select[1] => Mux5.IN4
+select[1] => Mux6.IN4
+saida[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|mostrardisplay:comb_11|DEMUX4X1:comb_6
+enable => saidas.OUTPUTSELECT
+enable => saidas.OUTPUTSELECT
+enable => saidas.OUTPUTSELECT
+enable => saidas[3].DATAIN
+bits[0] => Decoder0.IN1
+bits[1] => Decoder0.IN0
+saidas[0] <= saidas.DB_MAX_OUTPUT_PORT_TYPE
+saidas[1] <= saidas.DB_MAX_OUTPUT_PORT_TYPE
+saidas[2] <= saidas.DB_MAX_OUTPUT_PORT_TYPE
+saidas[3] <= enable.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|principal|divisor_clock:comb_12
+clock_in => counter2[0].CLK
+clock_in => counter2[1].CLK
+clock_in => counter2[2].CLK
+clock_in => counter2[3].CLK
+clock_in => counter2[4].CLK
+clock_in => counter2[5].CLK
+clock_in => counter2[6].CLK
+clock_in => counter2[7].CLK
+clock_in => counter2[8].CLK
+clock_in => counter2[9].CLK
+clock_in => counter2[10].CLK
+clock_in => counter2[11].CLK
+clock_in => counter2[12].CLK
+clock_in => counter2[13].CLK
+clock_in => counter2[14].CLK
+clock_in => counter2[15].CLK
+clock_in => counter2[16].CLK
+clock_in => counter2[17].CLK
+clock_in => counter2[18].CLK
+clock_in => counter2[19].CLK
+clock_in => counter2[20].CLK
+clock_in => counter2[21].CLK
+clock_in => counter2[22].CLK
+clock_in => counter2[23].CLK
+clock_in => counter2[24].CLK
+clock_in => counter[0].CLK
+clock_in => counter[1].CLK
+clock_in => counter[2].CLK
+clock_in => counter[3].CLK
+clock_in => counter[4].CLK
+clock_in => counter[5].CLK
+clock_in => counter[6].CLK
+clock_in => counter[7].CLK
+clock_in => counter[8].CLK
+clock_in => counter[9].CLK
+clock_in => counter[10].CLK
+clock_in => counter[11].CLK
+clock_in => counter[12].CLK
+clock_in => counter[13].CLK
+clock_in => counter[14].CLK
+clock_in => counter[15].CLK
+clock_out700hz <= counter[15].DB_MAX_OUTPUT_PORT_TYPE
+clock_out1hz <= counter2[24].DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,23 @@
+module mostrardisplay ( input clk,
+    input [2:0]select,
+	 input [2:0]sensores,
+	 input [4:0] soma,
+	 input [1:0] bebida,
+    output [6:0] segment,
+    output [3:0] digit
+	 
+);
+    wire [2:0] cont;
+    wire [27:0] cadeia;
+
+   
+
+   cont(clk, cont);
+
+   deco28bits(select, cadeia, bebida, soma, sensores);
+
+   mux28_7(cadeia, cont, segment);
+
+   demux4x1(1, cont, digit);
+
+endmodule 

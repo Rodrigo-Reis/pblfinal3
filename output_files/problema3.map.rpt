@@ -1,0 +1,524 @@
+Analysis & Synthesis report for problema3
+Tue Jun 20 14:06:05 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |principal|MaquinadeEstados:comb_5|estados
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: MaquinadeEstados:comb_5
+ 13. Parameter Settings for User Entity Instance: ErrMoeda:comb_10
+ 14. Port Connectivity Checks: "mostrardisplay:comb_11|DEMUX4X1:comb_6"
+ 15. Port Connectivity Checks: "mostrardisplay:comb_11|mux28x7:comb_5"
+ 16. Port Connectivity Checks: "mostrardisplay:comb_11|decodificador28bits:comb_4"
+ 17. Port Connectivity Checks: "mostrardisplay:comb_11|contadora:comb_3"
+ 18. Port Connectivity Checks: "level_to_pulse:enter|FFD:comb_7"
+ 19. Port Connectivity Checks: "level_to_pulse:enter|FFD:comb_6"
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Jun 20 14:06:05 2023       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; problema3                                   ;
+; Top-level Entity Name       ; principal                                   ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 233                                         ;
+; Total pins                  ; 25                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM240T100C5       ;                    ;
+; Top-level entity name                                            ; principal          ; problema3          ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
+; principal.v                      ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/principal.v           ;         ;
+; tempo6seg.v                      ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/tempo6seg.v           ;         ;
+; tempo2seg.v                      ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/tempo2seg.v           ;         ;
+; divisor_clock.v                  ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/divisor_clock.v       ;         ;
+; mux28x7.v                        ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/mux28x7.v             ;         ;
+; mostrardisplay.v                 ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/mostrardisplay.v      ;         ;
+; DEMUX4X1.v                       ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/DEMUX4X1.v            ;         ;
+; decodificador28bits.v            ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/decodificador28bits.v ;         ;
+; contadora.v                      ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/contadora.v           ;         ;
+; tempo10seg.v                     ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/tempo10seg.v          ;         ;
+; FFD.v                            ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/FFD.v                 ;         ;
+; level_to_pulse.v                 ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/level_to_pulse.v      ;         ;
+; ErrMoeda.v                       ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/ErrMoeda.v            ;         ;
+; ErrSensor.v                      ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/ErrSensor.v           ;         ;
+; SomadorMoeda.v                   ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/SomadorMoeda.v        ;         ;
+; MaquinadeEstados.v               ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/pblfinal3/MaquinadeEstados.v    ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 233   ;
+;     -- Combinational with no register       ; 150   ;
+;     -- Register only                        ; 3     ;
+;     -- Combinational with a register        ; 80    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 109   ;
+;     -- 3 input functions                    ; 33    ;
+;     -- 2 input functions                    ; 84    ;
+;     -- 1 input functions                    ; 4     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 191   ;
+;     -- arithmetic mode                      ; 42    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 8     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 83    ;
+; Total logic cells in carry chains           ; 45    ;
+; I/O pins                                    ; 25    ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 39    ;
+; Total fan-out                               ; 817   ;
+; Average fan-out                             ; 3.17  ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                         ;
++------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node         ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                          ; Entity Name         ; Library Name ;
++------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------+---------------------+--------------+
+; |principal                         ; 233 (0)     ; 83           ; 0          ; 25   ; 0            ; 150 (0)      ; 3 (0)             ; 80 (0)           ; 45 (0)          ; 0 (0)      ; |principal                                                   ; principal           ; work         ;
+;    |ErrMoeda:comb_10|              ; 6 (6)       ; 2            ; 0          ; 0    ; 0            ; 4 (4)        ; 1 (1)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |principal|ErrMoeda:comb_10                                  ; ErrMoeda            ; work         ;
+;    |ErrSensor:comb_8|              ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |principal|ErrSensor:comb_8                                  ; ErrSensor           ; work         ;
+;    |MaquinadeEstados:comb_5|       ; 27 (27)     ; 8            ; 0          ; 0    ; 0            ; 19 (19)      ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |principal|MaquinadeEstados:comb_5                           ; MaquinadeEstados    ; work         ;
+;    |SomadorMoeda:comb_9|           ; 26 (26)     ; 5            ; 0          ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 5 (5)            ; 5 (5)           ; 0 (0)      ; |principal|SomadorMoeda:comb_9                               ; SomadorMoeda        ; work         ;
+;    |divisor_clock:comb_12|         ; 40 (40)     ; 39           ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 39 (39)          ; 40 (40)         ; 0 (0)      ; |principal|divisor_clock:comb_12                             ; divisor_clock       ; work         ;
+;    |level_to_pulse:enter|          ; 3 (1)       ; 2            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |principal|level_to_pulse:enter                              ; level_to_pulse      ; work         ;
+;       |FFD:comb_6|                 ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |principal|level_to_pulse:enter|FFD:comb_6                   ; FFD                 ; work         ;
+;       |FFD:comb_7|                 ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |principal|level_to_pulse:enter|FFD:comb_7                   ; FFD                 ; work         ;
+;    |level_to_pulse:inserir|        ; 3 (1)       ; 2            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |principal|level_to_pulse:inserir                            ; level_to_pulse      ; work         ;
+;       |FFD:comb_6|                 ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |principal|level_to_pulse:inserir|FFD:comb_6                 ; FFD                 ; work         ;
+;       |FFD:comb_7|                 ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |principal|level_to_pulse:inserir|FFD:comb_7                 ; FFD                 ; work         ;
+;    |mostrardisplay:comb_11|        ; 101 (0)     ; 3            ; 0          ; 0    ; 0            ; 98 (0)       ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |principal|mostrardisplay:comb_11                            ; mostrardisplay      ; work         ;
+;       |DEMUX4X1:comb_6|            ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |principal|mostrardisplay:comb_11|DEMUX4X1:comb_6            ; DEMUX4X1            ; work         ;
+;       |contadora:comb_3|           ; 3 (3)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |principal|mostrardisplay:comb_11|contadora:comb_3           ; contadora           ; work         ;
+;       |decodificador28bits:comb_4| ; 66 (66)     ; 0            ; 0          ; 0    ; 0            ; 66 (66)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |principal|mostrardisplay:comb_11|decodificador28bits:comb_4 ; decodificador28bits ; work         ;
+;       |mux28x7:comb_5|             ; 30 (30)     ; 0            ; 0          ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |principal|mostrardisplay:comb_11|mux28x7:comb_5             ; mux28x7             ; work         ;
+;    |tempo10seg:aquecimento|        ; 5 (5)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |principal|tempo10seg:aquecimento                            ; tempo10seg          ; work         ;
+;    |tempo10seg:bebiba|             ; 6 (6)       ; 4            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |principal|tempo10seg:bebiba                                 ; tempo10seg          ; work         ;
+;    |tempo10seg:moeda|              ; 5 (5)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |principal|tempo10seg:moeda                                  ; tempo10seg          ; work         ;
+;    |tempo2seg:entrega|             ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |principal|tempo2seg:entrega                                 ; tempo2seg           ; work         ;
+;    |tempo2seg:pressu|              ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |principal|tempo2seg:pressu                                  ; tempo2seg           ; work         ;
+;    |tempo6seg:erromoeda|           ; 3 (3)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |principal|tempo6seg:erromoeda                               ; tempo6seg           ; work         ;
+;    |tempo6seg:errosensor|          ; 3 (3)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |principal|tempo6seg:errosensor                              ; tempo6seg           ; work         ;
++------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |principal|MaquinadeEstados:comb_5|estados                                                                                                                   ;
++---------------------+--------------------+---------------------+-----------------+---------------------+------------------+---------------+-----------------+----------------+
+; Name                ; estados.ERRO_MOEDA ; estados.ERRO_SENSOR ; estados.ENTREGA ; estados.AQUECIMENTO ; estados.BOMBAGEM ; estados.VALOR ; estados.ESCOLHA ; estados.ESPERA ;
++---------------------+--------------------+---------------------+-----------------+---------------------+------------------+---------------+-----------------+----------------+
+; estados.ESPERA      ; 0                  ; 0                   ; 0               ; 0                   ; 0                ; 0             ; 0               ; 0              ;
+; estados.ESCOLHA     ; 0                  ; 0                   ; 0               ; 0                   ; 0                ; 0             ; 1               ; 1              ;
+; estados.VALOR       ; 0                  ; 0                   ; 0               ; 0                   ; 0                ; 1             ; 0               ; 1              ;
+; estados.BOMBAGEM    ; 0                  ; 0                   ; 0               ; 0                   ; 1                ; 0             ; 0               ; 1              ;
+; estados.AQUECIMENTO ; 0                  ; 0                   ; 0               ; 1                   ; 0                ; 0             ; 0               ; 1              ;
+; estados.ENTREGA     ; 0                  ; 0                   ; 1               ; 0                   ; 0                ; 0             ; 0               ; 1              ;
+; estados.ERRO_SENSOR ; 0                  ; 1                   ; 0               ; 0                   ; 0                ; 0             ; 0               ; 1              ;
+; estados.ERRO_MOEDA  ; 1                  ; 0                   ; 0               ; 0                   ; 0                ; 0             ; 0               ; 1              ;
++---------------------+--------------------+---------------------+-----------------+---------------------+------------------+---------------+-----------------+----------------+
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++---------------------------------------+----------------------------------------------+
+; Register name                         ; Reason for Removal                           ;
++---------------------------------------+----------------------------------------------+
+; SomadorMoeda:comb_9|valorultrapassou  ; Stuck at VCC due to stuck port data_in       ;
+; MaquinadeEstados:comb_5|estados~3     ; Lost fanout                                  ;
+; MaquinadeEstados:comb_5|estados~4     ; Lost fanout                                  ;
+; MaquinadeEstados:comb_5|estados~5     ; Lost fanout                                  ;
+; divisor_clock:comb_12|counter2[0]     ; Merged with divisor_clock:comb_12|counter[0] ;
+; divisor_clock:comb_12|counter2[1]     ; Merged with divisor_clock:comb_12|counter[1] ;
+; Total Number of Removed Registers = 6 ;                                              ;
++---------------------------------------+----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 83    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 3     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |principal|SomadorMoeda:comb_9|soma[4]                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |principal|mostrardisplay:comb_11|decodificador28bits:comb_4|s1 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |principal|mostrardisplay:comb_11|decodificador28bits:comb_4|s1 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |principal|MaquinadeEstados:comb_5|estados                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MaquinadeEstados:comb_5 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; ESPERA         ; 000   ; Unsigned Binary                             ;
+; ESCOLHA        ; 001   ; Unsigned Binary                             ;
+; VALOR          ; 010   ; Unsigned Binary                             ;
+; BOMBAGEM       ; 011   ; Unsigned Binary                             ;
+; AQUECIMENTO    ; 100   ; Unsigned Binary                             ;
+; ENTREGA        ; 101   ; Unsigned Binary                             ;
+; ERRO_SENSOR    ; 110   ; Unsigned Binary                             ;
+; ERRO_MOEDA     ; 111   ; Unsigned Binary                             ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ErrMoeda:comb_10 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; produto1       ; 00010 ; Unsigned Binary                      ;
+; produto2       ; 00100 ; Unsigned Binary                      ;
+; produto3       ; 00101 ; Unsigned Binary                      ;
+; produto4       ; 01010 ; Unsigned Binary                      ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mostrardisplay:comb_11|DEMUX4X1:comb_6"                                                                                                                                                 ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; enable     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; enable[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; bits       ; Input ; Warning  ; Input port expression (3 bits) is wider than the input port (2 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts.   ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mostrardisplay:comb_11|mux28x7:comb_5"                                                                                                                                            ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                          ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; select ; Input ; Warning  ; Input port expression (3 bits) is wider than the input port (2 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mostrardisplay:comb_11|decodificador28bits:comb_4"                                                                                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; s1   ; Output ; Warning  ; Output or bidir port (21 bits) is smaller than the port expression (28 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND. ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mostrardisplay:comb_11|contadora:comb_3"                                                      ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; output_cont[2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "level_to_pulse:enter|FFD:comb_7"                                                                                                                                                      ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "level_to_pulse:enter|FFD:comb_6"                                                                                                                                                      ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Jun 20 14:05:59 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off problema3 -c problema3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file principal.v
+    Info (12023): Found entity 1: principal File: /home/aluno/Documentos/pblfinal3/principal.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at tempo6seg.v(5): "bit" is SystemVerilog-2005 keyword File: /home/aluno/Documentos/pblfinal3/tempo6seg.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file tempo6seg.v
+    Info (12023): Found entity 1: tempo6seg File: /home/aluno/Documentos/pblfinal3/tempo6seg.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at tempo2seg.v(5): "bit" is SystemVerilog-2005 keyword File: /home/aluno/Documentos/pblfinal3/tempo2seg.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file tempo2seg.v
+    Info (12023): Found entity 1: tempo2seg File: /home/aluno/Documentos/pblfinal3/tempo2seg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file divisor_clock.v
+    Info (12023): Found entity 1: divisor_clock File: /home/aluno/Documentos/pblfinal3/divisor_clock.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux28x7.v
+    Info (12023): Found entity 1: mux28x7 File: /home/aluno/Documentos/pblfinal3/mux28x7.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mostrardisplay.v
+    Info (12023): Found entity 1: mostrardisplay File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file DEMUX4X1.v
+    Info (12023): Found entity 1: DEMUX4X1 File: /home/aluno/Documentos/pblfinal3/DEMUX4X1.v Line: 1
+Warning (10229): Verilog HDL Expression warning at decodificador28bits.v(149): truncated literal to match 21 bits File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 149
+Info (12021): Found 1 design units, including 1 entities, in source file decodificador28bits.v
+    Info (12023): Found entity 1: decodificador28bits File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contadora.v
+    Info (12023): Found entity 1: contadora File: /home/aluno/Documentos/pblfinal3/contadora.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at tempo10seg.v(5): "bit" is SystemVerilog-2005 keyword File: /home/aluno/Documentos/pblfinal3/tempo10seg.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file tempo10seg.v
+    Info (12023): Found entity 1: tempo10seg File: /home/aluno/Documentos/pblfinal3/tempo10seg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file FFD.v
+    Info (12023): Found entity 1: FFD File: /home/aluno/Documentos/pblfinal3/FFD.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file level_to_pulse.v
+    Info (12023): Found entity 1: level_to_pulse File: /home/aluno/Documentos/pblfinal3/level_to_pulse.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ErrMoeda.v
+    Info (12023): Found entity 1: ErrMoeda File: /home/aluno/Documentos/pblfinal3/ErrMoeda.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ErrSensor.v
+    Info (12023): Found entity 1: ErrSensor File: /home/aluno/Documentos/pblfinal3/ErrSensor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file SomadorMoeda.v
+    Info (12023): Found entity 1: SomadorMoeda File: /home/aluno/Documentos/pblfinal3/SomadorMoeda.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file MaquinadeEstados.v
+    Info (12023): Found entity 1: MaquinadeEstados File: /home/aluno/Documentos/pblfinal3/MaquinadeEstados.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at principal.v(43): instance has no name File: /home/aluno/Documentos/pblfinal3/principal.v Line: 43
+Critical Warning (10846): Verilog HDL Instantiation warning at level_to_pulse.v(11): instance has no name File: /home/aluno/Documentos/pblfinal3/level_to_pulse.v Line: 11
+Critical Warning (10846): Verilog HDL Instantiation warning at level_to_pulse.v(12): instance has no name File: /home/aluno/Documentos/pblfinal3/level_to_pulse.v Line: 12
+Critical Warning (10846): Verilog HDL Instantiation warning at principal.v(48): instance has no name File: /home/aluno/Documentos/pblfinal3/principal.v Line: 48
+Critical Warning (10846): Verilog HDL Instantiation warning at principal.v(50): instance has no name File: /home/aluno/Documentos/pblfinal3/principal.v Line: 50
+Critical Warning (10846): Verilog HDL Instantiation warning at principal.v(52): instance has no name File: /home/aluno/Documentos/pblfinal3/principal.v Line: 52
+Critical Warning (10846): Verilog HDL Instantiation warning at mostrardisplay.v(17): instance has no name File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 17
+Critical Warning (10846): Verilog HDL Instantiation warning at mostrardisplay.v(19): instance has no name File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 19
+Critical Warning (10846): Verilog HDL Instantiation warning at mostrardisplay.v(21): instance has no name File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 21
+Critical Warning (10846): Verilog HDL Instantiation warning at mostrardisplay.v(23): instance has no name File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 23
+Critical Warning (10846): Verilog HDL Instantiation warning at principal.v(54): instance has no name File: /home/aluno/Documentos/pblfinal3/principal.v Line: 54
+Critical Warning (10846): Verilog HDL Instantiation warning at principal.v(56): instance has no name File: /home/aluno/Documentos/pblfinal3/principal.v Line: 56
+Info (12127): Elaborating entity "principal" for the top level hierarchy
+Info (12128): Elaborating entity "tempo2seg" for hierarchy "tempo2seg:entrega" File: /home/aluno/Documentos/pblfinal3/principal.v Line: 16
+Warning (10230): Verilog HDL assignment warning at tempo2seg.v(15): truncated value with size 32 to match size of target (2) File: /home/aluno/Documentos/pblfinal3/tempo2seg.v Line: 15
+Info (12128): Elaborating entity "tempo6seg" for hierarchy "tempo6seg:errosensor" File: /home/aluno/Documentos/pblfinal3/principal.v Line: 18
+Warning (10230): Verilog HDL assignment warning at tempo6seg.v(15): truncated value with size 32 to match size of target (3) File: /home/aluno/Documentos/pblfinal3/tempo6seg.v Line: 15
+Info (12128): Elaborating entity "tempo10seg" for hierarchy "tempo10seg:bebiba" File: /home/aluno/Documentos/pblfinal3/principal.v Line: 20
+Warning (10230): Verilog HDL assignment warning at tempo10seg.v(15): truncated value with size 32 to match size of target (4) File: /home/aluno/Documentos/pblfinal3/tempo10seg.v Line: 15
+Info (12128): Elaborating entity "MaquinadeEstados" for hierarchy "MaquinadeEstados:comb_5" File: /home/aluno/Documentos/pblfinal3/principal.v Line: 43
+Info (12128): Elaborating entity "level_to_pulse" for hierarchy "level_to_pulse:enter" File: /home/aluno/Documentos/pblfinal3/principal.v Line: 45
+Info (12128): Elaborating entity "FFD" for hierarchy "level_to_pulse:enter|FFD:comb_6" File: /home/aluno/Documentos/pblfinal3/level_to_pulse.v Line: 11
+Info (12128): Elaborating entity "ErrSensor" for hierarchy "ErrSensor:comb_8" File: /home/aluno/Documentos/pblfinal3/principal.v Line: 48
+Info (12128): Elaborating entity "SomadorMoeda" for hierarchy "SomadorMoeda:comb_9" File: /home/aluno/Documentos/pblfinal3/principal.v Line: 50
+Info (12128): Elaborating entity "ErrMoeda" for hierarchy "ErrMoeda:comb_10" File: /home/aluno/Documentos/pblfinal3/principal.v Line: 52
+Info (12128): Elaborating entity "mostrardisplay" for hierarchy "mostrardisplay:comb_11" File: /home/aluno/Documentos/pblfinal3/principal.v Line: 54
+Info (12128): Elaborating entity "contadora" for hierarchy "mostrardisplay:comb_11|contadora:comb_3" File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 17
+Warning (10230): Verilog HDL assignment warning at contadora.v(9): truncated value with size 32 to match size of target (3) File: /home/aluno/Documentos/pblfinal3/contadora.v Line: 9
+Info (12128): Elaborating entity "decodificador28bits" for hierarchy "mostrardisplay:comb_11|decodificador28bits:comb_4" File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 19
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(32): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 32
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(36): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 36
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(40): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 40
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(44): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 44
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(48): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 48
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(52): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 52
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(56): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 56
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(60): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 60
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(64): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 64
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(67): variable "valoramais" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 67
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(116): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 116
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(120): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 120
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(124): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 124
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(128): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 128
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(132): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 132
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(136): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 136
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(140): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 140
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(144): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 144
+Warning (10235): Verilog HDL Always Construct warning at decodificador28bits.v(148): variable "soma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/aluno/Documentos/pblfinal3/decodificador28bits.v Line: 148
+Info (12128): Elaborating entity "mux28x7" for hierarchy "mostrardisplay:comb_11|mux28x7:comb_5" File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 21
+Warning (10230): Verilog HDL assignment warning at mux28x7.v(12): truncated value with size 28 to match size of target (7) File: /home/aluno/Documentos/pblfinal3/mux28x7.v Line: 12
+Info (12128): Elaborating entity "DEMUX4X1" for hierarchy "mostrardisplay:comb_11|DEMUX4X1:comb_6" File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 23
+Info (12128): Elaborating entity "divisor_clock" for hierarchy "divisor_clock:comb_12" File: /home/aluno/Documentos/pblfinal3/principal.v Line: 56
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "mostrardisplay:comb_11|cadeia[27]" is missing source, defaulting to GND File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 13
+    Warning (12110): Net "mostrardisplay:comb_11|cadeia[26]" is missing source, defaulting to GND File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 13
+    Warning (12110): Net "mostrardisplay:comb_11|cadeia[25]" is missing source, defaulting to GND File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 13
+    Warning (12110): Net "mostrardisplay:comb_11|cadeia[24]" is missing source, defaulting to GND File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 13
+    Warning (12110): Net "mostrardisplay:comb_11|cadeia[23]" is missing source, defaulting to GND File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 13
+    Warning (12110): Net "mostrardisplay:comb_11|cadeia[22]" is missing source, defaulting to GND File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 13
+    Warning (12110): Net "mostrardisplay:comb_11|cadeia[21]" is missing source, defaulting to GND File: /home/aluno/Documentos/pblfinal3/mostrardisplay.v Line: 13
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_7" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aluno/Documentos/pblfinal3/level_to_pulse.v Line: 12
+Warning (12020): Port "ordered port 1" on the entity instantiation of "comb_6" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aluno/Documentos/pblfinal3/level_to_pulse.v Line: 11
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "digito[3]" is stuck at VCC File: /home/aluno/Documentos/pblfinal3/principal.v Line: 13
+    Warning (13410): Pin "ponto" is stuck at VCC File: /home/aluno/Documentos/pblfinal3/principal.v Line: 11
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 258 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 233 logic cells
+Info (144001): Generated suppressed messages file /home/aluno/Documentos/pblfinal3/output_files/problema3.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 55 warnings
+    Info: Peak virtual memory: 342 megabytes
+    Info: Processing ended: Tue Jun 20 14:06:05 2023
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:12
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/aluno/Documentos/pblfinal3/output_files/problema3.map.smsg.
+
+

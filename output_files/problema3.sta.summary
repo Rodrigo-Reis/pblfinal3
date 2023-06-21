@@ -1,0 +1,41 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'divisor_clock:comb_12|counter[15]'
+Slack : -6.522
+TNS   : -88.485
+
+Type  : Setup 'clock'
+Slack : -5.379
+TNS   : -164.646
+
+Type  : Setup 'divisor_clock:comb_12|counter2[24]'
+Slack : -2.581
+TNS   : -41.400
+
+Type  : Hold 'clock'
+Slack : -1.676
+TNS   : -3.273
+
+Type  : Hold 'divisor_clock:comb_12|counter2[24]'
+Slack : 1.078
+TNS   : 0.000
+
+Type  : Hold 'divisor_clock:comb_12|counter[15]'
+Slack : 1.687
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clock'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'divisor_clock:comb_12|counter2[24]'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'divisor_clock:comb_12|counter[15]'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

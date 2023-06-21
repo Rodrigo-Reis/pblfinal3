@@ -1,0 +1,11 @@
+
+State Machine - |principal|MaquinadeEstados:comb_5|estados
+Name estados.ERRO_MOEDA estados.ERRO_SENSOR estados.ENTREGA estados.AQUECIMENTO estados.BOMBAGEM estados.VALOR estados.ESCOLHA estados.ESPERA 
+estados.ESPERA 0 0 0 0 0 0 0 0 
+estados.ESCOLHA 0 0 0 0 0 0 1 1 
+estados.VALOR 0 0 0 0 0 1 0 1 
+estados.BOMBAGEM 0 0 0 0 1 0 0 1 
+estados.AQUECIMENTO 0 0 0 1 0 0 0 1 
+estados.ENTREGA 0 0 1 0 0 0 0 1 
+estados.ERRO_SENSOR 0 1 0 0 0 0 0 1 
+estados.ERRO_MOEDA 1 0 0 0 0 0 0 1 
